@@ -180,7 +180,6 @@ E:\New folder (2)\monthu5\QuanLyMuaBanXe\bin\Debug\de\DevExpress.Diagram.v20.2.C
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\bin\Debug\es\DevExpress.Diagram.v20.2.Core.resources.dll
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\bin\Debug\ja\DevExpress.Diagram.v20.2.Core.resources.dll
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\bin\Debug\ru\DevExpress.Diagram.v20.2.Core.resources.dll
-E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\QuanLyMuaBanDT.csprojAssemblyReference.cache
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\QuanLyMuaBanXe.frmMain.resources
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\QuanLyMuaBanXe.myFroms.frmAddInfor.resources
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\QuanLyMuaBanXe.myFroms.frmAddInforCustomer.resources
@@ -220,3 +219,4 @@ E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\Quản lý mua bán.exe.manif
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\Quản lý mua bán.application
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\Quản lý mua bán.exe
 E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\Quản lý mua bán.pdb
+E:\New folder (2)\monthu5\QuanLyMuaBanXe\obj\Debug\QuanLyMuaBanDT.csprojAssemblyReference.cache

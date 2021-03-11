@@ -436,7 +436,7 @@
             this.labelControl1.Size = new System.Drawing.Size(63, 20);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "Mã số xe:";
+            this.labelControl1.Text = "Mã số sp:";
             // 
             // Root
             // 
