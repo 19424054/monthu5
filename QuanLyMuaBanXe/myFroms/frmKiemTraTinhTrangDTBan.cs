@@ -29,6 +29,8 @@ namespace QuanLyMuaBanXe.myFroms
 
         private void frmKiemTraTinhTrangXeBan_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinSPBan' table. You can move, or remove it, as needed.
+            this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinXeBan' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'dsSystem.BM_DinhGia_MuaXe' table. You can move, or remove it, as needed.
             loadData();
@@ -42,17 +44,17 @@ namespace QuanLyMuaBanXe.myFroms
         }
         private void loadData()
         {
-            this.bM_ThongTinXeBanTableAdapter.Fill(this.dsSystem.BM_ThongTinXeBan);
+            this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             if (m_id == -1)
             {
 
                 bMDinhGiaMuaXeBindingSource.EndEdit();
                 bMDinhGiaMuaXeBindingSource.AddNew();
                 slkFind.EditValue = id_xe;
-                foreach (DataRow dr in dsSystem.BM_ThongTinXeBan.Rows)
+                foreach (DataRow dr in dsSystem.BM_ThongTinSPBan.Rows)
                 {
-                    if(id_xe==Convert.ToInt32(dr["Id_xe"]))
-                    textEdit3.EditValue = dr["Loai_xe"];
+                    if(id_xe==Convert.ToInt32(dr["Id_May"]))
+                    textEdit3.EditValue = dr["Loai_May"];
                 }
             }
             else
@@ -60,7 +62,7 @@ namespace QuanLyMuaBanXe.myFroms
                 bM_DinhGia_MuaXeTableAdapter.FillBy(dsSystem.BM_DinhGia_MuaXe, m_id);
                 if(dsSystem.BM_DinhGia_MuaXe.Rows.Count>0)
                 {
-                    textEdit3.EditValue = dsSystem.BM_DinhGia_MuaXe.Rows[0]["Loai_xe"];
+                    textEdit3.EditValue = dsSystem.BM_DinhGia_MuaXe.Rows[0]["Loai_May"];
                 }
             }
         }
@@ -72,7 +74,7 @@ namespace QuanLyMuaBanXe.myFroms
                 bM_DinhGia_MuaXeTableAdapter.Update(dsSystem.BM_DinhGia_MuaXe);
                 dsSystem.BM_DinhGia_MuaXe.AcceptChanges();
 
-                bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã định giá mua", id_xe);
+                bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã định giá mua", id_xe);
              
             }
             else
@@ -81,7 +83,7 @@ namespace QuanLyMuaBanXe.myFroms
                 bM_DinhGia_MuaXeTableAdapter.Update(dsSystem.BM_DinhGia_MuaXe);
                 dsSystem.BM_DinhGia_MuaXe.AcceptChanges();
             }
-            bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã kiểm tra", Convert.ToInt32(dsSystem.BM_DinhGia_MuaXe.Rows[0]["Id_xe"]));
+            bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã kiểm tra", Convert.ToInt32(dsSystem.BM_DinhGia_MuaXe.Rows[0]["Id_May"]));
         }
 
         private void barLargeButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

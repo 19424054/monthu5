@@ -8,19 +8,19 @@ namespace QuanLyMuaBanXe.myReport
 {
     public partial class rptThuChiDetail : DevExpress.XtraReports.UI.XtraReport
     {
-        private int id_xe = -1;
+        private int id_May = -1;
         public rptThuChiDetail(int id)
         {
             InitializeComponent();
-            id_xe = id;
+            id_May = id;
             loadData();
         }
         private void loadData()
         {
-            bM_REPORT_BUY_SELL_DETAILS_EACHTableAdapter.Fill(dsSystem2.BM_REPORT_BUY_SELL_DETAILS_EACH, id_xe);
+            bM_REPORT_BUY_SELL_DETAILS_EACHTableAdapter.Fill(dsSystem2.BM_REPORT_BUY_SELL_DETAILS_EACH, id_May);
             if(dsSystem2.BM_REPORT_BUY_SELL_DETAILS_EACH.Rows.Count>0)
             {
-                xrLabel1.Text = "BÁO CÁO THU CHI SẢN PHẨM "+ Convert.ToString( dsSystem2.BM_REPORT_BUY_SELL_DETAILS_EACH.Rows[0]["Ma_so_xe"]);
+                xrLabel1.Text = "BÁO CÁO THU CHI SẢN PHẨM "+ Convert.ToString( dsSystem2.BM_REPORT_BUY_SELL_DETAILS_EACH.Rows[0]["Ma_so_May"]);
             }
            
         }

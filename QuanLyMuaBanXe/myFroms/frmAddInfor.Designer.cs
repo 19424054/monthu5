@@ -36,7 +36,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.bMThongTinXeBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bMThongTinSPBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSystem = new QuanLyMuaBanXe.myDataSet.dsSystem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -74,13 +74,13 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bM_ThongTinXeBanTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxValidationProvider2 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.bM_ThongTinSPBanTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bMThongTinXeBanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMThongTinSPBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSystem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
@@ -145,7 +145,7 @@
             // 
             // memoEdit1
             // 
-            this.memoEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinXeBanBindingSource, "Dia_chi", true));
+            this.memoEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinSPBanBindingSource, "Dia_chi", true));
             this.memoEdit1.Location = new System.Drawing.Point(149, 214);
             this.memoEdit1.MenuManager = this.barManager1;
             this.memoEdit1.Name = "memoEdit1";
@@ -158,10 +158,10 @@
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.memoEdit1, conditionValidationRule1);
             // 
-            // bMThongTinXeBanBindingSource
+            // bMThongTinSPBanBindingSource
             // 
-            this.bMThongTinXeBanBindingSource.DataMember = "BM_ThongTinXeBan";
-            this.bMThongTinXeBanBindingSource.DataSource = this.dsSystem;
+            this.bMThongTinSPBanBindingSource.DataMember = "BM_ThongTinSPBan";
+            this.bMThongTinSPBanBindingSource.DataSource = this.dsSystem;
             // 
             // dsSystem
             // 
@@ -267,7 +267,7 @@
             // 
             // textEdit4
             // 
-            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinXeBanBindingSource, "SDT", true));
+            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinSPBanBindingSource, "SDT", true));
             this.textEdit4.Location = new System.Drawing.Point(149, 190);
             this.textEdit4.MenuManager = this.barManager1;
             this.textEdit4.Name = "textEdit4";
@@ -282,7 +282,7 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinXeBanBindingSource, "Ten_KH_Ban", true));
+            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinSPBanBindingSource, "Ten_KH_Ban", true));
             this.textEdit3.Location = new System.Drawing.Point(149, 166);
             this.textEdit3.MenuManager = this.barManager1;
             this.textEdit3.Name = "textEdit3";
@@ -308,7 +308,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinXeBanBindingSource, "Bien_so_xe", true));
+            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinSPBanBindingSource, "Dong_May", true));
             this.textEdit2.Location = new System.Drawing.Point(149, 95);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
@@ -343,7 +343,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinXeBanBindingSource, "Ma_so_xe", true));
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinSPBanBindingSource, "Ma_so_May", true));
             this.textEdit1.Location = new System.Drawing.Point(149, 71);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
@@ -356,7 +356,7 @@
             // 
             // cbbLoaiXe
             // 
-            this.cbbLoaiXe.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinXeBanBindingSource, "Loai_xe", true));
+            this.cbbLoaiXe.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMThongTinSPBanBindingSource, "Loai_May", true));
             this.cbbLoaiXe.EditValue = "Điện thoại";
             this.cbbLoaiXe.Location = new System.Drawing.Point(149, 47);
             this.cbbLoaiXe.MenuManager = this.barManager1;
@@ -570,9 +570,9 @@
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
-            // bM_ThongTinXeBanTableAdapter
+            // bM_ThongTinSPBanTableAdapter
             // 
-            this.bM_ThongTinXeBanTableAdapter.ClearBeforeFill = true;
+            this.bM_ThongTinSPBanTableAdapter.ClearBeforeFill = true;
             // 
             // frmAddInfor
             // 
@@ -594,7 +594,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bMThongTinXeBanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMThongTinSPBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSystem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
@@ -665,13 +665,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private myDataSet.dsSystem dsSystem;
-        private System.Windows.Forms.BindingSource bMThongTinXeBanBindingSource;
-        private myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter bM_ThongTinXeBanTableAdapter;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider2;
+        private System.Windows.Forms.BindingSource bMThongTinSPBanBindingSource;
+        private myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter bM_ThongTinSPBanTableAdapter;
     }
 }

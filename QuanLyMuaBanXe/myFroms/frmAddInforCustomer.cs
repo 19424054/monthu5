@@ -95,7 +95,7 @@ namespace QuanLyMuaBanXe.myFroms
         String createCode()
         {
             String code = "";
-            String codeDefault = "BX" + DateTime.Now.ToString("yy") + DateTime.Now.ToString("MM");
+            String codeDefault = "KH" + DateTime.Now.ToString("yy") + DateTime.Now.ToString("MM");
             int codeRun = Convert.ToInt32(bM_ThongTinKhachHangTableAdapter.ScalarQueryMaKH(codeDefault)) + 1;
             code = codeDefault + codeRun.ToString("000");
             return code;

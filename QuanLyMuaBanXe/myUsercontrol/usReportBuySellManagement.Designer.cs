@@ -308,7 +308,7 @@
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Mã số sp";
-            this.gridColumn1.FieldName = "Ma_so_xe";
+            this.gridColumn1.FieldName = "Ma_so_May";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
@@ -392,7 +392,7 @@
             this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.Caption = "Loại sp";
-            this.gridColumn7.FieldName = "Loai_xe";
+            this.gridColumn7.FieldName = "Loai_May";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
@@ -400,8 +400,8 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "Id_xe";
-            this.gridColumn8.FieldName = "Id_xe";
+            this.gridColumn8.Caption = "Id_May";
+            this.gridColumn8.FieldName = "Id_May";
             this.gridColumn8.Name = "gridColumn8";
             // 
             // bM_REPORT_BUY_SELL_DETAILSTableAdapter

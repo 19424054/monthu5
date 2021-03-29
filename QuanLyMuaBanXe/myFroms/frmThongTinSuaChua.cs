@@ -30,6 +30,8 @@ namespace QuanLyMuaBanXe.myFroms
 
         private void frmThongTinSuaChua_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinSPBan' table. You can move, or remove it, as needed.
+           // this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinXeBan' table. You can move, or remove it, as needed.
             loadData();
             // TODO: This line of code loads data into the 'dsSystem.BM_ThongTin_SuaChua' table. You can move, or remove it, as needed.
@@ -69,9 +71,9 @@ namespace QuanLyMuaBanXe.myFroms
         }
         private void loadData()
         {
-            this.bM_ThongTinXeBanTableAdapter.Fill(this.dsSystem.BM_ThongTinXeBan);
+            this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             searchLookUpEdit1.EditValue = m_id;
-            textEdit1.EditValue = dsSystem.BM_ThongTinXeBan[0]["Loai_xe"];
+            textEdit1.EditValue = dsSystem.BM_ThongTinSPBan[0]["Loai_May"];
             if(m_trangthai!=-1)
             {
                 barLargeButtonItem2.Enabled = false;
@@ -90,20 +92,20 @@ namespace QuanLyMuaBanXe.myFroms
                     bMThongTinSuaChuaBindingSource.EndEdit();
                     foreach (DataRow dr in dsSystem.BM_ThongTin_SuaChua)
                     {
-                        if (Convert.IsDBNull(dr["Id_xe"]))
+                        if (Convert.IsDBNull(dr["Id_May"]))
                         {
-                            dr["Id_xe"] = m_id;
+                            dr["Id_May"] = m_id;
                         }
                     }
                     bM_ThongTin_SuaChuaTableAdapter.Update(dsSystem.BM_ThongTin_SuaChua);
 
                     dsSystem.BM_ThongTin_SuaChua.AcceptChanges();
-                    bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Sửa chữa", m_id);
+                    bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Sửa chữa", m_id);
                 }
             }
             else
             {
-                bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã mua", m_id);
+                bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã mua", m_id);
             }
         }
         private void loadDetail(int id)
@@ -112,7 +114,7 @@ namespace QuanLyMuaBanXe.myFroms
         }
         private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {     
-            textEdit1.EditValue = this.searchLookUpEdit1.Properties.View.GetFocusedRowCellValue("Loai_xe");
+            textEdit1.EditValue = this.searchLookUpEdit1.Properties.View.GetFocusedRowCellValue("Loai_May");
             m_id = Convert.ToInt32(searchLookUpEdit1.EditValue);
             loadDetail(m_id);
         }

@@ -33,7 +33,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.bMXACNHANMUAXEDETAILSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSystem = new QuanLyMuaBanXe.myDataSet.dsSystem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -70,11 +69,11 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.bM_XACNHANMUAXE_DETAILSTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_XACNHANMUAXE_DETAILSTableAdapter();
+            this.bMXACNHANMUASPDETAILSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bM_XACNHANMUASP_DETAILSTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_XACNHANMUASP_DETAILSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bMXACNHANMUAXEDETAILSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSystem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -99,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMXACNHANMUASPDETAILSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -125,7 +125,7 @@
             // 
             // textEdit5
             // 
-            this.textEdit5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUAXEDETAILSBindingSource, "Loai_xe", true));
+            this.textEdit5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUASPDETAILSBindingSource, "Loai_May", true));
             this.textEdit5.Location = new System.Drawing.Point(115, 36);
             this.textEdit5.MenuManager = this.barManager1;
             this.textEdit5.Name = "textEdit5";
@@ -135,11 +135,6 @@
             this.textEdit5.Size = new System.Drawing.Size(180, 20);
             this.textEdit5.StyleController = this.layoutControl1;
             this.textEdit5.TabIndex = 16;
-            // 
-            // bMXACNHANMUAXEDETAILSBindingSource
-            // 
-            this.bMXACNHANMUAXEDETAILSBindingSource.DataMember = "BM_XACNHANMUAXE_DETAILS";
-            this.bMXACNHANMUAXEDETAILSBindingSource.DataSource = this.dsSystem;
             // 
             // dsSystem
             // 
@@ -250,7 +245,7 @@
             // 
             // dateEdit1
             // 
-            this.dateEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUAXEDETAILSBindingSource, "Ngay_mua", true));
+            this.dateEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUASPDETAILSBindingSource, "Ngay_mua", true));
             this.dateEdit1.EditValue = null;
             this.dateEdit1.Location = new System.Drawing.Point(115, 132);
             this.dateEdit1.MenuManager = this.barManager1;
@@ -263,7 +258,7 @@
             this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit1.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEdit1.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
             this.dateEdit1.Size = new System.Drawing.Size(180, 20);
             this.dateEdit1.StyleController = this.layoutControl1;
             this.dateEdit1.TabIndex = 14;
@@ -286,14 +281,14 @@
             // 
             // textEdit4
             // 
-            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUAXEDETAILSBindingSource, "Gia_ban", true));
+            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUASPDETAILSBindingSource, "Gia_ban", true));
             this.textEdit4.Location = new System.Drawing.Point(115, 108);
             this.textEdit4.MenuManager = this.barManager1;
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.DisplayFormat.FormatString = "n0";
             this.textEdit4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEdit4.Properties.Mask.EditMask = "n0";
-            this.textEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEdit4.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit4.Properties.MaskSettings.Set("mask", "n0");
             this.textEdit4.Size = new System.Drawing.Size(180, 20);
             this.textEdit4.StyleController = this.layoutControl1;
             this.textEdit4.TabIndex = 12;
@@ -305,7 +300,7 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUAXEDETAILSBindingSource, "Gia_cao_nhat", true));
+            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUASPDETAILSBindingSource, "Gia_cao_nhat", true));
             this.textEdit3.Location = new System.Drawing.Point(115, 84);
             this.textEdit3.MenuManager = this.barManager1;
             this.textEdit3.Name = "textEdit3";
@@ -313,8 +308,8 @@
             this.textEdit3.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.textEdit3.Properties.DisplayFormat.FormatString = "n0";
             this.textEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEdit3.Properties.Mask.EditMask = "n0";
-            this.textEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEdit3.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit3.Properties.MaskSettings.Set("mask", "n0");
             this.textEdit3.Properties.ReadOnly = true;
             this.textEdit3.Size = new System.Drawing.Size(180, 20);
             this.textEdit3.StyleController = this.layoutControl1;
@@ -322,7 +317,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUAXEDETAILSBindingSource, "Gia_thap_nhat", true));
+            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUASPDETAILSBindingSource, "Gia_thap_nhat", true));
             this.textEdit2.Location = new System.Drawing.Point(115, 60);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
@@ -330,8 +325,8 @@
             this.textEdit2.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.textEdit2.Properties.DisplayFormat.FormatString = "n0";
             this.textEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEdit2.Properties.Mask.EditMask = "n0";
-            this.textEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEdit2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit2.Properties.MaskSettings.Set("mask", "n0");
             this.textEdit2.Properties.ReadOnly = true;
             this.textEdit2.Size = new System.Drawing.Size(180, 20);
             this.textEdit2.StyleController = this.layoutControl1;
@@ -339,7 +334,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUAXEDETAILSBindingSource, "Ma_so_xe", true));
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bMXACNHANMUASPDETAILSBindingSource, "Ma_so_May", true));
             this.textEdit1.Location = new System.Drawing.Point(115, 12);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
@@ -544,11 +539,16 @@
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
-            // bM_XACNHANMUAXE_DETAILSTableAdapter
+            // bMXACNHANMUASPDETAILSBindingSource
             // 
-            this.bM_XACNHANMUAXE_DETAILSTableAdapter.ClearBeforeFill = true;
+            this.bMXACNHANMUASPDETAILSBindingSource.DataMember = "BM_XACNHANMUASP_DETAILS";
+            this.bMXACNHANMUASPDETAILSBindingSource.DataSource = this.dsSystem;
             // 
-            // frmXacNhanMuaXe
+            // bM_XACNHANMUASP_DETAILSTableAdapter
+            // 
+            this.bM_XACNHANMUASP_DETAILSTableAdapter.ClearBeforeFill = true;
+            // 
+            // frmXacNhanMuaDT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -559,14 +559,13 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IconOptions.Image = global::QuanLyMuaBanXe.Properties.Resources.shop_icon;
-            this.Name = "frmXacNhanMuaXe";
+            this.Name = "frmXacNhanMuaDT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XÁC NHẬN MUA SẢN PHẨM";
             this.Load += new System.EventHandler(this.frmXacNhanMuaXe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bMXACNHANMUAXEDETAILSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSystem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -591,6 +590,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMXACNHANMUASPDETAILSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,9 +627,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private System.Windows.Forms.BindingSource bMXACNHANMUAXEDETAILSBindingSource;
         private myDataSet.dsSystem dsSystem;
-        private myDataSet.dsSystemTableAdapters.BM_XACNHANMUAXE_DETAILSTableAdapter bM_XACNHANMUAXE_DETAILSTableAdapter;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
@@ -638,5 +636,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private System.Windows.Forms.BindingSource bMXACNHANMUASPDETAILSBindingSource;
+        private myDataSet.dsSystemTableAdapters.BM_XACNHANMUASP_DETAILSTableAdapter bM_XACNHANMUASP_DETAILSTableAdapter;
     }
 }

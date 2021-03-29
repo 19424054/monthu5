@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Quản lý mua bán.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Quản lý mua bán.exe" version="1.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Quản lý mua bán" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -1842,24 +1842,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quản lý mua bán.exe" size="1587672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quản lý mua bán.exe" size="1585112">
       <assemblyIdentity name="Quản lý mua bán" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lB72XtTfXS5aFCQTQ34aeWrDbPPO96GHJLrvoz6yktU=</dsig:DigestValue>
+        <dsig:DigestValue>JOQXnPqNmcekuiNOUmfhrMcpgMaoYqU7mMW8YRruNlA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Quản lý mua bán.exe.config" size="1241">
+  <file name="Quản lý mua bán.exe.config" size="1232">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X3chsVxuZS6Ng9MsZfNmmSXz9lZ01gXR1OoViQ5EOP4=</dsig:DigestValue>
+      <dsig:DigestValue>IYJKcYqT1r80xiKsd1UbSPmeJJxQgYJm4fzGtjfdT9Y=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

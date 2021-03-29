@@ -38,7 +38,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (view.FocusedRowHandle > -1)
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 if (Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai")) != "Sửa chữa")
                 {
                     myFroms.frmThongTinSuaChua frm = new myFroms.frmThongTinSuaChua(Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe")));
@@ -64,10 +64,10 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (view.FocusedRowHandle > -1)
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int id_may = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 if (Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai")) != "Sửa chữa")
                 {
-                    myFroms.frmThongTinSuaChua frm = new myFroms.frmThongTinSuaChua(Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe")));
+                    myFroms.frmThongTinSuaChua frm = new myFroms.frmThongTinSuaChua(Convert.ToInt32(view.GetFocusedRowCellValue("Id_May")));
                     frm.ShowDialog();
                     loadData(mYear, mMonth);
                 }
@@ -135,14 +135,14 @@ namespace QuanLyMuaBanXe.myUsercontrol
                 {
                     if(Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai"))== "Sửa chữa")
                     {
-                        int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                        int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                         myFroms.frmThongTinSuaChua frm = new myFroms.frmThongTinSuaChua(m_id);
                         frm.ShowDialog();
                         loadData(mYear, mMonth);
                     }
                     else
                     {
-                        XtraMessageBox.Show("Không thể cập nhật xe chưa sửa chữa. Vui lòng kiểm tra lại");
+                        XtraMessageBox.Show("Không thể cập nhật máy chưa sửa chữa. Vui lòng kiểm tra lại");
                     }
                 }
             }
@@ -171,7 +171,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (view.FocusedRowHandle > -1)
             {
-                myFroms.frmThongTinSuaChua frm = new myFroms.frmThongTinSuaChua(Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe")));   
+                myFroms.frmThongTinSuaChua frm = new myFroms.frmThongTinSuaChua(Convert.ToInt32(view.GetFocusedRowCellValue("Id_May")));   
                 frm.ShowDialog();
                 loadData(mYear, mMonth);
             }

@@ -51,7 +51,7 @@
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.bM_REPORT_BUY_SELL_DETAILSTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_REPORT_BUY_SELL_DETAILSTableAdapter();
             this.dsSystem1 = new QuanLyMuaBanXe.myDataSet.dsSystem();
-            this.bM_ThongTinXeBanTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter();
+            this.bM_ThongTinXeBanTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter();
             this.dsSystem2 = new QuanLyMuaBanXe.myDataSet.dsSystem();
             this.bM_REPORT_BUY_SELL_DETAILS_EACHTableAdapter = new QuanLyMuaBanXe.myDataSet.dsSystemTableAdapters.BM_REPORT_BUY_SELL_DETAILS_EACHTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -134,7 +134,7 @@
             // 
             this.xrTableCell2.Dpi = 254F;
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ma_so_xe]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ma_so_May]")});
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Weight = 1.2687497431838284D;
@@ -336,7 +336,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private myDataSet.dsSystemTableAdapters.BM_REPORT_BUY_SELL_DETAILSTableAdapter bM_REPORT_BUY_SELL_DETAILSTableAdapter;
         private myDataSet.dsSystem dsSystem1;
-        private myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter bM_ThongTinXeBanTableAdapter;
+        private myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter bM_ThongTinXeBanTableAdapter;
         private myDataSet.dsSystem dsSystem2;
         private myDataSet.dsSystemTableAdapters.BM_REPORT_BUY_SELL_DETAILS_EACHTableAdapter bM_REPORT_BUY_SELL_DETAILS_EACHTableAdapter;
     }

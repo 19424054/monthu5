@@ -16,7 +16,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
     {
         private int mYear = DateTime.Now.Year;
         private int mMonth = -1;
-        myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter taXeBan = new myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter();
+        myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter taXeBan = new myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter();
         public usListProductionKyThuatDinhGia()
         {
             InitializeComponent();
@@ -27,10 +27,10 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (view.FocusedRowHandle > -1)
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 if(Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai"))== "Đã kiểm tra")
                 {
-                    if(XtraMessageBox.Show("Bạn có xác nhận hủy định giá của xe này không?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if(XtraMessageBox.Show("Bạn có xác nhận hủy định giá của máy này không?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         taXeBan.UpdateQueryTrangThai("Mới tạo", m_id);
                         bM_DINHGIA_MUA_DETAILSTableAdapter.DeleteQuery(Convert.ToInt32(view.GetFocusedRowCellValue("Id_kiemTra")));
@@ -39,7 +39,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
                 }
                 else
                 {
-                    XtraMessageBox.Show("Bạn không thể hủy xe chưa kiểm định mua");
+                    XtraMessageBox.Show("Bạn không thể hủy Máy chưa kiểm định mua");
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
                 {
                     if (Convert.IsDBNull(view.GetFocusedRowCellValue("Id_kiemTra")))
                     {
-                        int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                        int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                         myFroms.frmKiemTraTinhTrangDTBan frm = new myFroms.frmKiemTraTinhTrangDTBan(-1, m_id);
                         frm.ShowDialog();
                         loadData(mYear, mMonth);
@@ -130,14 +130,14 @@ namespace QuanLyMuaBanXe.myUsercontrol
             {
                 if (!Convert.IsDBNull(view.GetFocusedRowCellValue("Id_kiemTra")))
                 {
-                    int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                    int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                     myFroms.frmKiemTraTinhTrangDTBan frm = new myFroms.frmKiemTraTinhTrangDTBan(Convert.ToInt32(view.GetFocusedRowCellValue("Id_kiemTra")), m_id);
                     frm.ShowDialog();
                     loadData(mYear, mMonth);
                 }
                 else
                 {
-                    XtraMessageBox.Show("Xe này chưa được định giá mua. Vui lòng kiểm tra");
+                    XtraMessageBox.Show("Máy này chưa được định giá mua. Vui lòng kiểm tra");
                 }
             }
         }
@@ -160,14 +160,14 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (Convert.IsDBNull(view.GetFocusedRowCellValue("Id_kiemTra")))
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 myFroms.frmKiemTraTinhTrangDTBan frm = new myFroms.frmKiemTraTinhTrangDTBan(-1, m_id);
                 frm.ShowDialog();
                 loadData(mYear, mMonth);
             }
             else
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 myFroms.frmKiemTraTinhTrangDTBan frm = new myFroms.frmKiemTraTinhTrangDTBan(Convert.ToInt32(view.GetFocusedRowCellValue("Id_kiemtra")), m_id);
                 frm.ShowDialog();
                 loadData(mYear, mMonth);

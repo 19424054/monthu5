@@ -31,6 +31,8 @@ namespace QuanLyMuaBanXe.myFroms
 
         private void frmDinhGia_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinSPBan' table. You can move, or remove it, as needed.
+            this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinXeBan' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'dsSystem.BM_DinhGia_Ban' table. You can move, or remove it, as needed.
             loadData();
@@ -42,7 +44,7 @@ namespace QuanLyMuaBanXe.myFroms
         }
         private void loadData()
         {
-            this.bM_ThongTinXeBanTableAdapter.Fill(this.dsSystem.BM_ThongTinXeBan);
+            this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             if (m_id == -1)
             {
                 bMDinhGiaBanBindingSource.EndEdit();
@@ -51,7 +53,7 @@ namespace QuanLyMuaBanXe.myFroms
                 if (dtDinhGia.Rows.Count > 0)
                 {
                     searchLookUpEdit1.EditValue = id_xe;
-                    textEdit4.EditValue = dtDinhGia.Rows[0]["Loai_xe"];
+                    textEdit4.EditValue = dtDinhGia.Rows[0]["Loai_May"];
                     textEdit1.EditValue = dtDinhGia.Rows[0]["Gia_ban"];
                     textEdit2.EditValue = dtDinhGia.Rows[0]["ChiPhi"];
                 }
@@ -61,7 +63,7 @@ namespace QuanLyMuaBanXe.myFroms
                 bM_DinhGia_BanTableAdapter.FillBy(dsSystem.BM_DinhGia_Ban, m_id);
                 if(dsSystem.BM_DinhGia_Ban.Rows.Count>0)
                 {
-                    textEdit4.EditValue = dsSystem.BM_DinhGia_Ban.Rows[0]["Loai_xe"];
+                    textEdit4.EditValue = dsSystem.BM_DinhGia_Ban.Rows[0]["Loai_May"];
                 }
             }
         }
@@ -70,7 +72,7 @@ namespace QuanLyMuaBanXe.myFroms
         {
             if (dxValidationProvider1.Validate())
             {
-                if(XtraMessageBox.Show("Bạn có xác nhận định giá cho xe này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                if(XtraMessageBox.Show("Bạn có xác nhận định giá cho máy này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
                     if (m_id == -1)
                     {
@@ -78,7 +80,7 @@ namespace QuanLyMuaBanXe.myFroms
                         bM_DinhGia_BanTableAdapter.Update(dsSystem.BM_DinhGia_Ban);
                         dsSystem.BM_DinhGia_Ban.AcceptChanges();
                        // int id_xeBan = Convert.ToInt32(dsSystem.BM_ThongTinXeBan[0]["Id_xe"]);
-                        bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã định giá bán", id_xe);
+                        bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã định giá bán", id_xe);
                         this.Close();
                     }
                     else

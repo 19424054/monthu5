@@ -72,7 +72,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
         {
             if(gvMain.FocusedRowHandle>-1)
             {
-                myReport.rptThuChiDetail rpt = new myReport.rptThuChiDetail(Convert.ToInt32( gvMain.GetFocusedRowCellValue("Id_xe")));
+                myReport.rptThuChiDetail rpt = new myReport.rptThuChiDetail(Convert.ToInt32( gvMain.GetFocusedRowCellValue("Id_May")));
                 rpt.CreateDocument();
                 rpt.ShowPreview();
             }

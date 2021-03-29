@@ -22,6 +22,8 @@ namespace QuanLyMuaBanXe.myFroms
 
         private void frmAddInfor_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinSPBan' table. You can move, or remove it, as needed.
+           // this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinXeBan' table. You can move, or remove it, as needed.
             //this.bM_ThongTinXeBanTableAdapter.Fill(this.dsSystem.BM_ThongTinXeBan);
             loadData();
@@ -52,18 +54,18 @@ namespace QuanLyMuaBanXe.myFroms
             {
                 if (id_xe == -1)
                 {
-                    bMThongTinXeBanBindingSource.EndEdit();
-                    dsSystem.BM_ThongTinXeBan[0]["Ngay_tao"] = DateTime.Now;
-                    dsSystem.BM_ThongTinXeBan[0]["Trang_thai"] = "Mới tạo";
-                    dsSystem.BM_ThongTinXeBan[0]["Gia_ban"] = 0;
-                    bM_ThongTinXeBanTableAdapter.Update(dsSystem.BM_ThongTinXeBan);
-                    dsSystem.BM_ThongTinXeBan.AcceptChanges();
+                    bMThongTinSPBanBindingSource.EndEdit();
+                    dsSystem.BM_ThongTinSPBan[0]["Ngay_tao"] = DateTime.Now;
+                    dsSystem.BM_ThongTinSPBan[0]["Trang_thai"] = "Mới tạo";
+                    dsSystem.BM_ThongTinSPBan[0]["Gia_ban"] = 0;
+                    bM_ThongTinSPBanTableAdapter.Update(dsSystem.BM_ThongTinSPBan);
+                    dsSystem.BM_ThongTinSPBan.AcceptChanges();
                 }
                 else
                 {
-                    bMThongTinXeBanBindingSource.EndEdit();
-                    bM_ThongTinXeBanTableAdapter.Update(dsSystem.BM_ThongTinXeBan);
-                    dsSystem.BM_ThongTinXeBan.AcceptChanges();
+                    bMThongTinSPBanBindingSource.EndEdit();
+                    bM_ThongTinSPBanTableAdapter.Update(dsSystem.BM_ThongTinSPBan);
+                    dsSystem.BM_ThongTinSPBan.AcceptChanges();
                 }
                 this.Close();
             }
@@ -72,15 +74,15 @@ namespace QuanLyMuaBanXe.myFroms
         {
             if (id_xe == -1)
             {
-                bMThongTinXeBanBindingSource.AddNew();
-                bMThongTinXeBanBindingSource.EndEdit();
+                bMThongTinSPBanBindingSource.AddNew();
+                bMThongTinSPBanBindingSource.EndEdit();
                 textEdit1.EditValue = createCode();
-                cbbLoaiXe.EditValue = "Xe máy";
+                cbbLoaiXe.EditValue = "Điện thoại";
             }
             else
             {
                 cbbLoaiXe.ReadOnly = true;
-                bM_ThongTinXeBanTableAdapter.FillBy(dsSystem.BM_ThongTinXeBan, id_xe);
+                bM_ThongTinSPBanTableAdapter.FillBy(dsSystem.BM_ThongTinSPBan, id_xe);
             }
         }
         private void btnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -103,7 +105,7 @@ namespace QuanLyMuaBanXe.myFroms
         {
             String code = "";
                 String codeDefault = "BX" + DateTime.Now.ToString("yy") + DateTime.Now.ToString("MM");
-            int codeRun = Convert.ToInt32(bM_ThongTinXeBanTableAdapter.ScalarQueryGetMaxCode(codeDefault))+1;
+            int codeRun = Convert.ToInt32(bM_ThongTinSPBanTableAdapter.ScalarQueryGetMaxCode(codeDefault))+1;
             code = codeDefault + codeRun.ToString("000");
             return code;
         }

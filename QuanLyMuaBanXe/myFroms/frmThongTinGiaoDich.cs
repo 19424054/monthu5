@@ -40,8 +40,10 @@ namespace QuanLyMuaBanXe.myFroms
 
         private void frmThongTinGiaoDich_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinSPBan' table. You can move, or remove it, as needed.
+           // this.bM_ThongTinSPBanTableAdapter.Fill(this.dsSystem.BM_ThongTinSPBan);
             // TODO: This line of code loads data into the 'dsSystem.BM_ThongTinXeBan' table. You can move, or remove it, as needed.
-           
+
             loadData();
 
         }
@@ -50,7 +52,7 @@ namespace QuanLyMuaBanXe.myFroms
             this.bM_ThongTinKhachHangTableAdapter.Fill(this.dsSystem.BM_ThongTinKhachHang);
             if (m_id == -1)
             {
-                loadDataxe();
+                loadDataSP();
                 bMGiaoDichBindingSource.EndEdit();
                 bMGiaoDichBindingSource.AddNew();
                 cbbHinhThuc.SelectedIndex = 0;
@@ -70,31 +72,31 @@ namespace QuanLyMuaBanXe.myFroms
             else
             { 
                 bM_GiaoDichTableAdapter.FillBy(dsSystem.BM_GiaoDich, m_id);
-                m_check = Convert.ToInt32(dsSystem.BM_GiaoDich.Rows[0]["Id_xe"]);
-                mIdXe= Convert.ToInt32(dsSystem.BM_GiaoDich.Rows[0]["Id_xe"]);
-                loadDataxe(); 
+                m_check = Convert.ToInt32(dsSystem.BM_GiaoDich.Rows[0]["Id_May"]);
+                mIdXe= Convert.ToInt32(dsSystem.BM_GiaoDich.Rows[0]["Id_May"]);
+                loadDataSP(); 
              }
         }
-        private void loadDataxe()
+        private void loadDataSP()
         {
-            this.bM_ThongTinXeBanTableAdapter.FillByDadinhGia(this.dsSystem.BM_ThongTinXeBan);
+            this.bM_ThongTinSPBanTableAdapter.FillByDaDinhGia(this.dsSystem.BM_ThongTinSPBan);
             if (m_id != -1)
             {
-                for (int i = this.dsSystem.BM_ThongTinXeBan.Rows.Count-1; i >= 0; i--)
+                for (int i = this.dsSystem.BM_ThongTinSPBan.Rows.Count-1; i >= 0; i--)
                 {
-                    if (m_check!=Convert.ToInt32(this.dsSystem.BM_ThongTinXeBan.Rows[i]["Id_xe"]))
+                    if (m_check!=Convert.ToInt32(this.dsSystem.BM_ThongTinSPBan.Rows[i]["Id_May"]))
                     {
-                        if (Convert.ToString(this.dsSystem.BM_ThongTinXeBan.Rows[i]["Trang_Thai"]) != "Đã định giá bán")
-                            this.dsSystem.BM_ThongTinXeBan.Rows.Remove(this.dsSystem.BM_ThongTinXeBan.Rows[i]);
+                        if (Convert.ToString(this.dsSystem.BM_ThongTinSPBan.Rows[i]["Trang_Thai"]) != "Đã định giá bán")
+                            this.dsSystem.BM_ThongTinSPBan.Rows.Remove(this.dsSystem.BM_ThongTinSPBan.Rows[i]);
                     }
                 }
             }
             else
             {
-                for(int i= this.dsSystem.BM_ThongTinXeBan.Rows.Count-1;i>=0;i--)
+                for(int i= this.dsSystem.BM_ThongTinSPBan.Rows.Count-1;i>=0;i--)
                 {
-                    if (Convert.ToString(this.dsSystem.BM_ThongTinXeBan.Rows[i]["Trang_Thai"]) != "Đã định giá bán")
-                        this.dsSystem.BM_ThongTinXeBan.Rows.Remove(this.dsSystem.BM_ThongTinXeBan.Rows[i]);
+                    if (Convert.ToString(this.dsSystem.BM_ThongTinSPBan.Rows[i]["Trang_Thai"]) != "Đã định giá bán")
+                        this.dsSystem.BM_ThongTinSPBan.Rows.Remove(this.dsSystem.BM_ThongTinSPBan.Rows[i]);
                 }
             }
         }
@@ -118,7 +120,7 @@ namespace QuanLyMuaBanXe.myFroms
                                     dsSystem.BM_GiaoDich.AcceptChanges();
                                     mIdXe = Convert.ToInt32(searchLookUpEdit2.EditValue);
                                     mIdXeKH = Convert.ToInt32(searchLookUpEdit1.EditValue);
-                                    bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã giao dịch", mIdXe);
+                                    bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã giao dịch", mIdXe);
                                     bM_ThongTinKhachHangTableAdapter.UpdateQuery("Đã mua", mIdXeKH);
                                     this.Close();
                                 }
@@ -133,7 +135,7 @@ namespace QuanLyMuaBanXe.myFroms
                     {
                         if (m_check != mIdXe)
                         {
-                            if (MessageBox.Show("Bạn có xác nhận thay đổi xe giao dịch cho khách hàng vào hệ thống?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Bạn có xác nhận thay đổi máy giao dịch cho khách hàng vào hệ thống?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 if (!Convert.IsDBNull(textEdit3.EditValue) && !Convert.IsDBNull(textEdit5.EditValue))
                                 {
@@ -144,8 +146,8 @@ namespace QuanLyMuaBanXe.myFroms
                                         dsSystem.BM_GiaoDich.AcceptChanges();
                                         mIdXe = Convert.ToInt32(searchLookUpEdit2.EditValue);
                                         mIdXeKH = Convert.ToInt32(searchLookUpEdit1.EditValue);
-                                        bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã giao dịch", mIdXe);
-                                        bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã định giá bán", m_check);
+                                        bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã giao dịch", mIdXe);
+                                        bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã định giá bán", m_check);
                                         bM_ThongTinKhachHangTableAdapter.UpdateQuery("Đã mua", mIdXeKH);
                                         this.Close();
                                     }
@@ -169,7 +171,7 @@ namespace QuanLyMuaBanXe.myFroms
                                         dsSystem.BM_GiaoDich.AcceptChanges();
                                         mIdXe = Convert.ToInt32(searchLookUpEdit2.EditValue);
                                         mIdXeKH = Convert.ToInt32(searchLookUpEdit1.EditValue);
-                                        bM_ThongTinXeBanTableAdapter.UpdateQueryTrangThai("Đã giao dịch", mIdXe);
+                                        bM_ThongTinSPBanTableAdapter.UpdateQueryTrangThai("Đã giao dịch", mIdXe);
                                         bM_ThongTinKhachHangTableAdapter.UpdateQuery("Đã mua", mIdXeKH);
                                         this.Close();
                                     }
@@ -220,7 +222,7 @@ namespace QuanLyMuaBanXe.myFroms
                 if (!Convert.IsDBNull(searchLookUpEdit2.EditValue))
                 {
                     //object c = this.searchLookUpEdit2.Properties.View.GetFocusedRowCellValue("Loai_xe");
-                    textEdit2.EditValue = this.searchLookUpEdit2.Properties.View.GetFocusedRowCellValue("Loai_xe"); // Convert.ToString(this.searchLookUpEdit2.Properties.View.GetFocusedRowCellValue("Loai_xe")) != null ? Convert.ToString(this.searchLookUpEdit1.Properties.View.GetFocusedRowCellValue("Loai_xe").ToString()) : "";
+                    textEdit2.EditValue = this.searchLookUpEdit2.Properties.View.GetFocusedRowCellValue("Loai_May"); // Convert.ToString(this.searchLookUpEdit2.Properties.View.GetFocusedRowCellValue("Loai_xe")) != null ? Convert.ToString(this.searchLookUpEdit1.Properties.View.GetFocusedRowCellValue("Loai_xe").ToString()) : "";
                     textEdit5.EditValue = this.searchLookUpEdit2.Properties.View.GetFocusedRowCellValue("Dinh_gia");
                 }
         }

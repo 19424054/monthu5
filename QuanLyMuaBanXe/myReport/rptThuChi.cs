@@ -25,11 +25,11 @@ namespace QuanLyMuaBanXe.myReport
         {
             if (ngay == -1)
             {
-                xrLabel1.Text = "BÁO CÁO THU CHI XE THÁNG " + thang + "/" + nam;
+                xrLabel1.Text = "BÁO CÁO THU CHI MÁY THÁNG " + thang + "/" + nam;
             }
             else
             {
-                xrLabel1.Text = "BÁO CÁO THU CHI XE THÁNG " + ngay + "/" + thang + "/" + nam;
+                xrLabel1.Text = "BÁO CÁO THU CHI MÁY THÁNG " + ngay + "/" + thang + "/" + nam;
             }
             bM_REPORT_BUY_SELL_DETAILSTableAdapter.Fill(dsSystem1.BM_REPORT_BUY_SELL_DETAILS, ngay, nam, thang);
         }

@@ -16,7 +16,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
     {
         private int mYear = DateTime.Now.Year;
         private int mMonth = -1;
-        myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter taXeBan = new myDataSet.dsSystemTableAdapters.BM_ThongTinXeBanTableAdapter();
+        myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter taXeBan = new myDataSet.dsSystemTableAdapters.BM_ThongTinSPBanTableAdapter();
         public usListProduction()
         {
             InitializeComponent();
@@ -24,26 +24,34 @@ namespace QuanLyMuaBanXe.myUsercontrol
 
         private void barLargeButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GridView view = gvMain;
-            if (view.FocusedRowHandle > -1)
+            try
             {
-                if(!Convert.IsDBNull(view.GetFocusedRowCellValue("Id_xe")))
+                GridView view = gvMain;
+                if (view.FocusedRowHandle > -1)
                 {
-                    if (Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai")) == "Mới tạo")
+                    if (!Convert.IsDBNull(view.GetFocusedRowCellValue("Id_May")))
                     {
-                        if (XtraMessageBox.Show("Bạn có muốn xóa sản phẩm này không?","Thông báo",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai")) == "Mới tạo")
                         {
-                            int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
-                            gvMain.DeleteSelectedRows();
-                            bM_LISTPRODUCT_DETAILSTableAdapter.DeleteQuery(m_id);
+                            if (XtraMessageBox.Show("Bạn có muốn xóa sản phẩm này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
+                                gvMain.DeleteSelectedRows();
+                                bM_LISTPRODUCT_DETAILSTableAdapter.DeleteQuery(m_id);
+                            }
                         }
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Bạn chỉ xóa được sản phẩm ở trạng thái mới tạo");
+                        else
+                        {
+                            XtraMessageBox.Show("Bạn chỉ xóa được sản phẩm ở trạng thái mới tạo");
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Bạn không thể xóa mã đã được định giá");
+            }
+           
         }
 
         private void btnAddNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -105,7 +113,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (view.FocusedRowHandle > -1)
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 myFroms.frmAddInfor frm = new myFroms.frmAddInfor(m_id);
                 frm.ShowDialog();
                 loadData(mYear, mMonth);
@@ -135,10 +143,10 @@ namespace QuanLyMuaBanXe.myUsercontrol
             GridView view = gvMain;
             if (view.FocusedRowHandle > -1)
             {
-                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                int m_id = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                 if(Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai"))=="Đã kiểm tra")
                 {
-                    if(XtraMessageBox.Show("Bạn xác nhận đã hoàn thành thủ tục mua xe này?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if(XtraMessageBox.Show("Bạn xác nhận đã hoàn thành thủ tục mua máy này?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         myFroms.frmXacNhanMuaDT frm = new myFroms.frmXacNhanMuaDT(m_id);
                         frm.ShowDialog();
@@ -147,7 +155,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
                 }
                 else if(Convert.ToString(view.GetFocusedRowCellValue("Trang_Thai")) == "Đã mua")
                 {
-                    if (XtraMessageBox.Show("Bạn xác nhận cập nhật lại thủ tục mua xe này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (XtraMessageBox.Show("Bạn xác nhận cập nhật lại thủ tục mua máy này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         myFroms.frmXacNhanMuaDT frm = new myFroms.frmXacNhanMuaDT(m_id);
                         frm.ShowDialog();
@@ -156,7 +164,7 @@ namespace QuanLyMuaBanXe.myUsercontrol
                 }
                 else
                 {
-                    XtraMessageBox.Show("Xe hiện tại chưa định giá. Vui lòng liên hệ phòng kỹ thuật.");
+                    XtraMessageBox.Show("Máy hiện tại chưa định giá. Vui lòng liên hệ phòng kỹ thuật.");
                 }
             }
         }

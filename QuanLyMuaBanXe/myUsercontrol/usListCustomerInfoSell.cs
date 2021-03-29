@@ -50,19 +50,19 @@ namespace QuanLyMuaBanXe.myUsercontrol
                     {
                         int id_ban = Convert.ToInt32(view.GetFocusedRowCellValue("Id_ban"));
                         int id_kh = Convert.ToInt32(view.GetFocusedRowCellValue("Id_KH"));
-                        int id_xe = Convert.ToInt32(view.GetFocusedRowCellValue("Id_xe"));
+                        int id_may = Convert.ToInt32(view.GetFocusedRowCellValue("Id_May"));
                         if (XtraMessageBox.Show("Bạn có muốn hủy giao dịch này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             bM_SELLPRODUCT_DETAILSTableAdapter.DeleteQueryId_Ban(id_ban);
                             bM_SELLPRODUCT_DETAILSTableAdapter.UpdateQuery("Mới tạo", id_kh);
-                            bM_SELLPRODUCT_DETAILSTableAdapter.UpdateQueryTrangThaiXe("Đã định giá bán", id_xe);
+                            bM_SELLPRODUCT_DETAILSTableAdapter.UpdateQueryTrangThaiMay("Đã định giá bán", id_may);
                             loadData(mYear, mMonth);
                         }
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Bạn không thể hủy xe chưa thực hiện giao dịch");
+                    XtraMessageBox.Show("Bạn không thể hủy máy chưa thực hiện giao dịch");
                 }
             }
         }

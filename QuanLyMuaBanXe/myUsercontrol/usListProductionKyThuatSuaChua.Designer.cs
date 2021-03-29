@@ -330,7 +330,7 @@
             this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Mã số sp";
-            this.gridColumn3.FieldName = "Ma_so_xe";
+            this.gridColumn3.FieldName = "Ma_so_May";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
@@ -379,8 +379,8 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Id_xe";
-            this.gridColumn1.FieldName = "Id_xe";
+            this.gridColumn1.Caption = "Id_May";
+            this.gridColumn1.FieldName = "Id_May";
             this.gridColumn1.Name = "gridColumn1";
             // 
             // gridColumn2
@@ -388,7 +388,7 @@
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Loại sp";
-            this.gridColumn2.FieldName = "Loai_xe";
+            this.gridColumn2.FieldName = "Loai_May";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;

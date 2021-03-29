@@ -26,8 +26,8 @@ namespace QuanLyMuaBanXe.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=27.0.14.80;Initial Catalog=QuanLyMuaBanSanPham;User ID=leanerp;Passwo" +
-            "rd=leanerp123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EJDSQ0T;Initial Catalog=QuanLyMuaBanSanPham;Integrated Securi" +
+            "ty=True")]
         public string QuanLyMuaBanDTConnectionString {
             get {
                 return ((string)(this["QuanLyMuaBanDTConnectionString"]));
