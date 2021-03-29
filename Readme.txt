@@ -22,7 +22,7 @@ Lưu ý: Sử dụng sql server chạy câu query add file db.sql để tạo da
 B.Hướng dẫn chạy trên hệ công cụ Visual Studio.
 Môi trường để chạy ứng dụng trên Visual Studio:
 Sử dụng Visual Studio 2015 trở lên.
-Cài đặt bộ công cụ hỗ trợ Devexpress 19.2.6:
+Cài đặt bộ công cụ hỗ trợ Devexpress 20.2.4:
 https://go.devexpress.com/devexpressdownload_universaltrial.aspx
 Tiến hành cài đặt. Sau khi cài đặt mở lại Visual Studio đợi hệ thống cập nhật lại.
 Giải nén file QuanLyMuaBanXe
